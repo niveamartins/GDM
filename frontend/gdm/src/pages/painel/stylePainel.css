@@ -1,0 +1,56 @@
+.logoImg {
+    width:60%;
+    max-width: 300px;
+}
+
+.bodyPainel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.link {
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 400px;
+}
+
+.menuLine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 7px;
+    width: 100%;
+
+
+    
+}
+
+button label {
+    text-transform: uppercase;
+    margin-left: 15px;
+
+}
+
+h1 {
+    font-size: 100%;
+}

@@ -1,0 +1,38 @@
+.alerta {
+    border: 1px solid #4682B4;
+    border-radius: 6px;
+    padding: 0px 7px;
+    margin-bottom: 12px;
+    box-shadow: 2px 3px 6px #8888;
+    background-color: #B0C4DE;
+}
+.navBar {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    align-items: center;
+}
+.navBar h2 {
+    margin: 0px 10px;
+}
+.bodyAlertas h2 {
+    color: #4682B4;
+    text-transform: uppercase;
+}
+ 
+ul {
+    list-style-type: none;
+    padding: 0;
+    text-decoration: none;
+}
+.link h1 {
+    text-decoration: none;
+}
+.alerta h1 {
+    border-bottom: 1px solid #4682B4;
+    text-transform: uppercase;
+}
+
+.alerta p {
+    color: 	#1C1C1C;
+}

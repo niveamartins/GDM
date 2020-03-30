@@ -1,0 +1,12 @@
+.formsCreate input {
+    margin-bottom: 5px;
+    width: 95%;
+}
+
+.formsCreate {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    width: 90%;
+
+}

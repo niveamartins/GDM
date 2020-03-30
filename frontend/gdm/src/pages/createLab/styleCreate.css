@@ -1,0 +1,32 @@
+.formsCreate input {
+    margin-bottom: 5px;
+    width: 95%;
+    margin-top: 3px;
+}
+
+.formsCreate {
+    display: flex;
+    flex-direction: column;
+    margin: 5%;
+    width: 90%;
+
+}
+.Radio {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+p {
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 7px;
+    margin-bottom: 4px;
+}
+label {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px !important;
+}
+
+label input {
+    width: 5% !important;
+}

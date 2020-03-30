@@ -1,0 +1,30 @@
+.maquina {
+    border: 1px solid #4682B4;
+    border-radius: 6px;
+    padding: 0px 7px;
+    margin-bottom: 12px;
+    box-shadow: 2px 3px 6px #8888;
+    background-color: #B0C4DE;
+}
+
+.navBar h2 {
+    margin: 0px 10px;
+    text-transform: uppercase;
+    color: #4682B4;
+
+}
+ 
+
+.maquina h1 {
+    border-bottom: 1px solid #4682B4;
+    text-transform: uppercase;
+}
+
+.maquina p {
+    color: 	#1C1C1C;
+}
+
+.insideButton {
+    width: 100%;
+ 
+}

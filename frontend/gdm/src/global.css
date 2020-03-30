@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
+
+body {
+    background-color: #f0f0f5;
+    font-family: Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+input, textarea {
+    border: 1px  #A4C3D8 solid;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+input, button, textarea {
+    font: 400 18px Roboto, sans-serif;
+    outline: 0;
+    
+}
+.link {
+    text-decoration: none;
+}
+
+.navBar {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+button {
+    cursor: pointer;
+    background-color: #4682B4;
+    padding: 10px 25px;
+    border: 0px;
+    color: #ffff;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+    color: #BCC6CC;
+    
+ }
+  
+ :-moz-placeholder { /* Firefox 18- */
+    color: #BCC6CC;  
+ }
+  
+ ::-moz-placeholder {  /* Firefox 19+ */
+    color: #BCC6CC;  
+ }
+  
+ :-ms-input-placeholder {  
+    color: #BCC6CC;  
+ }
