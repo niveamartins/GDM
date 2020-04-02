@@ -29,6 +29,8 @@ routes.get('/users', UserController.index);
 
 routes.post('/user', UserController.create);
 
+routes.post('/auth', UserController.authenticate);
+
 
 
 //routes.post('/machines', MachineController.create)
