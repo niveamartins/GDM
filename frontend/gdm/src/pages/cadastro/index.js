@@ -41,7 +41,7 @@ function Cadastro() {
   return (
     <div className="bodyCreate">
       <div className="navBar">
-              <Link to="/painel">
+              <Link to="/">
                   <FaArrowLeft size={20} color="#4682B4"></FaArrowLeft>
               </Link>  
               <h2>Cadastro</h2>

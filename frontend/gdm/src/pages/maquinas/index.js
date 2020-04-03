@@ -22,12 +22,14 @@ function Maquinas(props) {
         .get(url)
         .then(response => {
             setMachines(response.data);
-        });
+        
+        }); 
       } catch (err) {
           alert("Não foi possível encontrar as máquinas desse laboratório");
       }  
     }, [])
-  return (
+
+    return (
       <div className="bodyMaquinas">
           <div className="navBar">
             <Link to="/painel">

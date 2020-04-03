@@ -14,12 +14,14 @@ function Maquina(props) {
     const [machines, setMachine] = useState([]); 
     const id = props.location.state;
     const url = '/machine/' + id;
+    const dados = {};
     useEffect(() => {
       try {
          api
         .get(url)
         .then(response => {
             setMachine(response.data);
+          
         });
       } catch (err) {
           alert("Não foi possível encontrar a máquina");
