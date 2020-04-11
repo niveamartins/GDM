@@ -2,6 +2,9 @@
 //importamos para o projeto o Express
 const express = require('express');
 
+const https = require('https');
+const fs = require('fs'); 
+
 const cors = require('cors');
 
 //vamos importar as rotas do arquivo routes.js
@@ -27,4 +30,10 @@ app.use(routes);
 //npx knex init
 
 //aqui indicamos a porta que a aplicação deve usar para escutar
-app.listen(3333);
+const httpsServer = https.createServer({
+    key: fs.readFileSync('./src/https/key.pem'),
+    cert: fs.readFileSync('./src/https/cert.pem'),
+    passphrase: 'Labnet'
+}, app);
+
+httpsServer.listen(3333);
