@@ -4,9 +4,21 @@ const MachineController = require('./controllers/MachineController');
 const LabController = require('./controllers/LabController');
 const UserController = require('./controllers/UserController');
 
+const authMiddleware = require('./middlewares/auth');
+
+
 //aqui vamos instanciar o Router do express
 const routes = express.Router();
 
+
+//-------------------Unsecure routes----------------------------//
+//Rotas de Usuários
+routes.get('/users', UserController.index);
+routes.post('/user', UserController.create);
+routes.post('/auth', UserController.authenticate);
+
+//-------------------Secure routes--------------------------//
+routes.use(authMiddleware);
 
 //Rotas das Máquinas
 routes.get('/machines', MachineController.index);
@@ -24,10 +36,7 @@ routes.get('/lab/:id', LabController.machinesByLab);
 routes.put('/lab', LabController.update);
 routes.post('/lab', LabController.create);
 
-//Rotas de Usuários
-routes.get('/users', UserController.index);
 
-routes.post('/user', UserController.create);
 
 
 

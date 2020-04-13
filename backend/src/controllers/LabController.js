@@ -14,6 +14,14 @@ module.exports = {
       .where("lab_id", id)
       .select('*')
 
+      machines.forEach(function(data, index) {
+        if (machines[index].isWorking === '1' || machines[index].isWorking === true || machines[index].isWorking === 1) {
+            machines[index].isWorking = 'Disponível';
+        } else {
+            machines[index].isWorking = 'Em manutenção';
+        }
+        });
+
       return res.json(machines);
     },
 
