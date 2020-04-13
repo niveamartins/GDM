@@ -19,9 +19,6 @@ function Logon() {
                 <Link to="/painel" className="link" >
                   <button type="submit">Logar</button>
                 </Link>
-                <Link to="/cadastro" className="link" >
-                  <button>Cadastro</button>
-                </Link>
             </forms>
         </div>
 

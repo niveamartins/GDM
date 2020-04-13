@@ -13,7 +13,6 @@ import Labs from './pages/labs';
 import CreateLab from './pages/createLab';
 import CreateMachine from './pages/createMachine';
 import EditMachine from './pages/EditMachine';
-import Cadastro from './pages/cadastro';
 
 
 // Aqui definimos todas as rotas. No caso do exact é pq o React vai  
@@ -33,7 +32,6 @@ export default function Routes() {
                 <Route path="/createLab" component={CreateLab} />
                 <Route path="/createMachine" component={CreateMachine} />
                 <Route path="/edit" component={EditMachine} />
-                <Route path="/cadastro" component={Cadastro} />
             </Switch>
         </BrowserRouter>
     );

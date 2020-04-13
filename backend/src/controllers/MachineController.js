@@ -31,6 +31,14 @@ module.exports = {
     async index(req, res) {
         const machines = await connection('machine').select('*');
 
+        machines.forEach(function(data, index) {
+            if (machines[index].isWorking === '1' || machines[index].isWorking === true || machines[index].isWorking === 1) {
+                machines[index].isWorking = 'Disponível';
+            } else {
+                machines[index].isWorking = 'Em manutenção';
+            }
+        });
+
         return res.json(machines);
     },
 
@@ -87,6 +95,12 @@ module.exports = {
       .select('*')
       .first();
 
+        if (machine.isWorking === '1' || machine.isWorking === true || machine.isWorking === 1) {
+            machine.isWorking = 'Disponível';
+        } else {
+            machine.isWorking = 'Em manutenção';
+        }
+
       return res.json(machine);
     },
 
@@ -94,6 +108,14 @@ module.exports = {
         const machines = await connection('machine')
         .where("isWorking", false)
         .select('*');
+
+        machines.forEach(function(data, index) {
+            if (machines[index].isWorking === '1' || machines[index].isWorking === true || machines[index].isWorking === 1) {
+                machines[index].isWorking = 'Disponível';
+            } else {
+                machines[index].isWorking = 'Em manutenção';
+            }
+        });
 
         return res.json(machines);
         
