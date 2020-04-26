@@ -4,8 +4,8 @@
 
 ### Back-end: Node.js
 Para o backend da aplicação foi escolhido o Node.js e para servir:
-	'$ npm install'
-  '$ npm start'
+	* '$ npm install'
+  	* '$ npm start'
 
 A porta estabelecida é a 3333, mas é possível mudar isso no arquivo App.js.
 
@@ -15,8 +15,8 @@ Para o front da aplicação escolhemos o React.js.
 Caso você já tenha o url para o seu backend, basta ir em api.js dentro da pasta services e mudar a string baseURL.
 
 Para servi-lo basta:
-  '$ npm install'
-  '$ npm start'
+	* '$ npm install'
+  	* '$ npm start'
   
 A porta estabelecida é a 3000.
 
