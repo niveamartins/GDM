@@ -16,6 +16,7 @@ Caso você já tenha o url para o seu backend, basta ir em api.js dentro da past
 
 Para servi-lo basta:
 * ` $ npm install`
+* ` $ npm build`
 * ` $ npm start`
   
 A porta estabelecida é a 3000.
@@ -92,3 +93,9 @@ Para acessar uma máquina a partir de um QR Code, o usuário dispôem da opção
     "react-icons": "^3.9.0",
     "react-qr-reader": "^2.2.1",
     "react-router-dom": "^5.1.2"
+
+## Observações para os Devs
+
+Para que o front-end consiga se comunicar com o back-end localmente é preciso alterar a rota no arquivo api.js localizado na pasta services para "https://localhost:port/"
+
+

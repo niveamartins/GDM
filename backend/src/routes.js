@@ -13,28 +13,28 @@ const routes = express.Router();
 
 //-------------------Unsecure routes----------------------------//
 //Rotas de Usuários
-routes.get('/users', UserController.index);
-routes.post('/user', UserController.create);
-routes.post('/auth', UserController.authenticate);
+routes.get('/api/users', UserController.index);
+routes.post('/api/user', UserController.create);
+routes.post('/api/auth', UserController.authenticate);
 
 //-------------------Secure routes--------------------------//
 routes.use(authMiddleware);
 
 //Rotas das Máquinas
-routes.get('/machines', MachineController.index);
-routes.get('/broken', MachineController.brokenMachines);
+routes.get('/api/machines', MachineController.index);
+routes.get('/api/broken', MachineController.brokenMachines);
 
-routes.post('/machine', MachineController.create);
-routes.delete('/machine/:id', MachineController.delete);
-routes.put('/machine', MachineController.update);
-routes.get('/machine/:id', MachineController.getMachine);
+routes.post('/api/machine', MachineController.create);
+routes.delete('/api/machine/:id', MachineController.delete);
+routes.put('/api/machine', MachineController.update);
+routes.get('/api/machine/:id', MachineController.getMachine);
 
 //Rotas dos Laboratórios
-routes.get('/labs', LabController.index);
+routes.get('/api/labs', LabController.index);
 
-routes.get('/lab/:id', LabController.machinesByLab);
-routes.put('/lab', LabController.update);
-routes.post('/lab', LabController.create);
+routes.get('/api/lab/:id', LabController.machinesByLab);
+routes.put('/api/lab', LabController.update);
+routes.post('/api/lab', LabController.create);
 
 
 
