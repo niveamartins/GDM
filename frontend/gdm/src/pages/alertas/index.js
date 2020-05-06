@@ -14,13 +14,35 @@ function Alertas() {
       try {
          api
         .get('/broken')
-        .then(response => {
+        .then(response => { 
             setbrokenMachine(response.data);
         });
       } catch (err) {
           alert("Não foi possível encontrar as máquinas quebradas");
       }  
     }, [])  
+
+    const getBrokenMachinesContent = broken => {
+      let content = [];
+      for (let idx in broken) {
+        const item = broken[idx];
+        content.push(   
+            <Link to= {{
+                pathname: "/maquina",
+                state: [item.id]
+              }} className="link">   
+            <li key={item.id}>
+                <div className="alerta">
+                    <h1>{item.name}</h1>
+                    <p>Localização</p>
+                    <p>{item.isWorking}</p>
+                </div>
+            </li>
+            </Link>)
+      }
+      return content;
+    };
+
 
   return (
       <div className="bodyAlertas">
@@ -31,21 +53,7 @@ function Alertas() {
             <h2>Notificações</h2>
           </div>
           <div className="optionsAlertas">
-            <ul>
-                {brokenMachines.map(brokenMachine => ( 
-                    <Link to= {{
-                        pathname: "/maquina",
-                        state: [brokenMachine.id]
-                      }} className="link">   
-                    <li key={brokenMachine.id}>
-                        <div className="alerta">
-                            <h1>{brokenMachine.name}</h1>
-                            <p>Localização</p>
-                            <p>{brokenMachine.isWorking}</p>
-                        </div>
-                    </li>
-                    </Link>    
-                ))}
+            <ul>{getBrokenMachinesContent(brokenMachines)}
             </ul>
           </div>
       </div>

@@ -27,6 +27,29 @@ function Maquinas(props) {
           alert("Não foi possível encontrar as máquinas desse laboratório");
       }  
     }, [])
+
+    const getMachinesContent = machines => {
+      let content = [];
+      for (let idx in machines) {
+        const item = machines[idx];
+        content.push(  
+          <Link to= {{
+              pathname: "/maquina",
+              state: [item.id]
+          }} className="link">   
+          <li key={item.id}>
+              <div className="maquina">
+                  <h1>{item.name}</h1>
+                  <p>{item.isWorking}</p>
+              </div>
+          </li>
+          </Link>    
+      )
+      }
+      return content;
+    };
+
+  
   return (
       <div className="bodyMaquinas">
           <div className="navBar">
@@ -41,20 +64,7 @@ function Maquinas(props) {
             </button>
           </Link>  
           <div className="optionsMaquinas">
-            <ul>
-                {machines.map(machine => ( 
-                        <Link to= {{
-                            pathname: "/maquina",
-                            state: [machine.id]
-                        }} className="link">   
-                        <li key={machine.id}>
-                            <div className="maquina">
-                                <h1>{machine.name}</h1>
-                                <p>{machine.isWorking}</p>
-                            </div>
-                        </li>
-                        </Link>    
-                    ))}
+            <ul>{getMachinesContent(machines)}
                 </ul>
           </div>
       </div>

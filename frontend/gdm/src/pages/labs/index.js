@@ -17,13 +17,37 @@ function Labs() {
          api
         .get('/labs')
         .then(response => {
+            console.log(response.data)
             setLabs(response.data);
+            console.log(labs)
         });
       } catch (err) {
           alert("Não foi possível encontrar os laboratórios");
       }  
     }, [])  
   
+    console.log(labs)
+
+    const getLabsContent = labs => {
+      let content = [];
+      for (let idx in labs) {
+        const item = labs[idx];
+        content.push(<Link to= {{
+                pathname: "/maquinas",
+                state: [item.id]
+              }} className="link">   
+            <li key={item.id}>
+                <div className="lab">
+                    <h1>{item.name}</h1>
+                    <p>{item.location}</p>
+                </div>
+            </li>
+            </Link>);
+      }
+      return content;
+    };
+
+
   return (
       <div className="bodyLabs">
           <div className="navBar">
@@ -38,20 +62,7 @@ function Labs() {
             </button>
           </Link>
           <div className="optionsLabs">
-          <ul>
-                {labs.map(lab => ( 
-                    <Link to= {{
-                        pathname: "/maquinas",
-                        state: [lab.id]
-                      }} className="link">   
-                    <li key={lab.id}>
-                        <div className="lab">
-                            <h1>{lab.name}</h1>
-                            <p>{lab.location}</p>
-                        </div>
-                    </li>
-                    </Link>    
-                ))}
+          <ul>{getLabsContent(labs)}
             </ul>
           </div>
       </div>
